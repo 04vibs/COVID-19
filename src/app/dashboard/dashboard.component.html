@@ -1,0 +1,19 @@
+<!-- {{data[0][1].districtData[0]}}   -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>State</th>
+      <th>StateCode</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let statedata of data; let i = index">
+      <td>{{i}}</td>
+      <td> {{statedata[0]}}</td>
+      <td>{{statedata[1].statecode}}</td>
+  </tr>
+  </tbody>
+</table> 
