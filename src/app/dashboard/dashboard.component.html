@@ -1,19 +1,23 @@
-<!-- {{data[0][1].districtData[0]}}   -->
-
+ 
 <table class="table">
   <thead>
     <tr>
       <th>Index</th>
-      <th>State</th>
-      <th>StateCode</th>
+      <th>state</th>
+      <th>statecode</th>
       <th>Active</th>
+      <th>confirmed</th>
+      <th>recovered</th>
     </tr>
   </thead>
   <tbody >
-    <tr *ngFor="let statedata of data; let i = index">
+    <tr *ngFor="let statedata of sampledata; let i = index">
       <td>{{i}}</td>
-      <td> {{statedata[0]}}</td>
-      <td>{{statedata[1].statecode}}</td>
+      <td> {{statedata.state}}</td>
+      <td> {{statedata.statecode}}</td>
+      <td> {{statedata.active}}</td>
+      <td> {{statedata.confirmed}}</td>
+      <td> {{statedata.recovered}}</td>
   </tr>
   </tbody>
 </table> 
