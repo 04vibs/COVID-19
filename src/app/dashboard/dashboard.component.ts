@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StateDataService } from '../services/state-data.service';
+import { DetailsOfStateService } from '../services/details-of-state.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,10 @@ export class DashboardComponent implements OnInit {
   data: any[];
   sampledata: any;
   selectedstatedata: any;
-  constructor(private stateData: StateDataService) {
+  statedata: {} ;
+  sampledatastates: any;
+  constructor(private stateData: StateDataService,
+              private stateDetail: DetailsOfStateService) {
   }
 
   ngOnInit() {
@@ -26,9 +30,21 @@ export class DashboardComponent implements OnInit {
       this.sampledata = this.data[1];
     });
   }
+
+  getStateDetails(state) {
+    this.stateDetail.getStatesdetails()
+    .subscribe(response => {
+      console.log(response);
+      this.statedata = response;
+       console.log(this.statedata);
+       this.sampledatastates = this.statedata[state]['districtData'];
+    });
+  }
+
   onSelect(state) {
     this.selectedstatedata = state;
     console.log(this.selectedstatedata);
-    // routing to navigate to selected state
+    this.getStateDetails(state);
   }
+
 }

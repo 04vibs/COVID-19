@@ -9,8 +9,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 import { DetailsOfStateService } from './services/details-of-state.service';
+import { StateDataService } from './services/state-data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { StateDetailsComponent } from './state-details/state-details.component';
+//import { StateDetailsComponent } from './state-details/state-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { StateDetailsComponent } from './state-details/state-details.component';
     PrecautionsComponent,
     DashboardComponent,
     LatestNewsComponent,
-    StateDetailsComponent
+  //  StateDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,7 @@ import { StateDetailsComponent } from './state-details/state-details.component';
   ],
   providers: [
     DetailsOfStateService,
+    StateDataService
   ],
   bootstrap: [AppComponent]
 })

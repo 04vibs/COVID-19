@@ -23,5 +23,33 @@
   </tbody>
 </table> 
 
+<!-- 
+<app-state-details [selectedStatecode] = "selectedstatedata"></app-state-details> -->
 
-<app-state-details [selectedStatecode] = "selectedstatedata"></app-state-details>
+
+<table *ngIf="selectedstatedata" class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>state</th>
+      <th>Active</th>
+      <th>Confirmed</th>
+      <th>Recovered</th>
+      <th>Deceased</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr
+        *ngFor="let statedatavalue of sampledatastates | keyvalue 
+              let i = index">
+      <td>{{i}}</td>
+      <td>{{statedatavalue.key}}</td>
+      <td>{{statedatavalue.value.active}}</td>
+      <td>{{statedatavalue.value.confirmed}}</td>
+      <td>{{statedatavalue.value.deceased}}</td>
+      <td>{{statedatavalue.value.recovered}}</td>
+      </tr>
+  </tbody>
+</table>
+
+<!-- <td>{{statedatavalue.key}}: {{statedatavalue.value| json}}</td> -->
