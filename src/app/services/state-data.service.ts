@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DetailsOfStateService {
+export class StateDataService {
 
   constructor(private http: HttpClient) { }
+  baseUrl1 = 'https://api.covid19india.org/data.json';
 
-  baseUrl = 'https://api.covid19india.org/state_district_wise.json';
   getStatesData() {
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl1);
   }
 }

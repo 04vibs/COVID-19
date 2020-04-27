@@ -1,4 +1,4 @@
- 
+
 <table class="table">
   <thead>
     <tr>
@@ -11,7 +11,8 @@
     </tr>
   </thead>
   <tbody >
-    <tr *ngFor="let statedata of sampledata; let i = index">
+    <tr *ngFor="let statedata of sampledata; let i = index"
+      (click)="onSelect(statedata.state)">
       <td>{{i}}</td>
       <td> {{statedata.state}}</td>
       <td> {{statedata.statecode}}</td>
@@ -21,3 +22,6 @@
   </tr>
   </tbody>
 </table> 
+
+
+<app-state-details [selectedStatecode] = "selectedstatedata"></app-state-details>

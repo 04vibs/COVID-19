@@ -1,0 +1,22 @@
+<div>
+  <h2>State: {{selectedStatecode}}</h2>
+</div>
+
+<table *ngIf="selectedStatecode" class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>state</th>
+      <th>statecode</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr 
+        *ngFor="let statedatavalue of sampledata | keyvalue 
+              let i = index">
+      <td>{{i}}</td>
+      <td>{{statedatavalue.key}}: {{statedatavalue.value| json}}</td>
+      <td>{{sampledata[i].statecode}}</td>
+      </tr>
+  </tbody>
+</table>
