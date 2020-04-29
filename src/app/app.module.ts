@@ -11,7 +11,8 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { DetailsOfStateService } from './services/details-of-state.service';
 import { StateDataService } from './services/state-data.service';
 import { HttpClientModule } from '@angular/common/http';
-//import { StateDetailsComponent } from './state-details/state-details.component';
+import { LoginComponent } from './login/login.component';
+// import { StateDetailsComponent } from './state-details/state-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     PrecautionsComponent,
     DashboardComponent,
     LatestNewsComponent,
+    LoginComponent,
   //  StateDetailsComponent
   ],
   imports: [
