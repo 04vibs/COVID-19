@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-latest-news',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    localStorage.clear();
+    window.sessionStorage.removeItem('user');
+    this.router.navigate(['dashboard']);
+  }
 }

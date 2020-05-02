@@ -8,20 +8,26 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user: any = {};
+  getuser: any;
   constructor(private auth: AuthserviceService,
     private router: Router) { }
 
   ngOnInit() {
   }
   login(logindetails) {
-    console.log(logindetails.value.user.username);
-    console.log(logindetails.value.user.password);
     this.user = {
       username : logindetails.value.user.username,
       password: logindetails.value.user.password
     };
-    this.router.navigate(['/latestNews']);
-    // this.auth.validateUser(this.user)
-
+     this.auth.validateUser(this.user);
+    this.getusers();
+  }
+  getusers() {
+    const userExists =  this.auth.getUsers();
+    if (userExists) {
+      this.router.navigate(['/latestNews']);
+    } else {
+      this.router.navigate(['/non-access']);
+    }
   }
 }

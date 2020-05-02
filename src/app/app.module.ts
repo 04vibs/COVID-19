@@ -12,7 +12,10 @@ import { DetailsOfStateService } from './services/details-of-state.service';
 import { StateDataService } from './services/state-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { AuthserviceService } from './services/authservice.service';
+import { NonAccessibleComponent } from './non-accessible/non-accessible.component';
 // import { StateDetailsComponent } from './state-details/state-details.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     LatestNewsComponent,
     LoginComponent,
+    NonAccessibleComponent,
   //  StateDetailsComponent
   ],
   imports: [
@@ -32,7 +36,8 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     DetailsOfStateService,
-    StateDataService
+    StateDataService,
+    AuthserviceService
   ],
   bootstrap: [AppComponent]
 })
