@@ -7,12 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./latest-news.component.scss']
 })
 export class LatestNewsComponent implements OnInit {
-
+  isAdmin;
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.isAdminvalue();
   }
 
+  isAdminvalue() {
+    this.isAdmin = localStorage.getItem('isAdmin');
+  }
   logout() {
     localStorage.clear();
     window.sessionStorage.removeItem('user');

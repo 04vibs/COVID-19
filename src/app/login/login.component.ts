@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   getusers() {
     const userExists =  this.auth.getUsers();
     if (userExists) {
+      localStorage.setItem('isAdmin', 'true');
       this.router.navigate(['/latestNews']);
     } else {
       this.router.navigate(['/non-access']);
